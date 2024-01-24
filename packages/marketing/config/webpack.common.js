@@ -1,4 +1,4 @@
-
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   module: {
@@ -15,11 +15,15 @@ module.exports = {
             ],
             plugins: [
               '@babel/plugin-transform-runtime',
-              
             ]
           }
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html'
+    }),
+  ]
 }
